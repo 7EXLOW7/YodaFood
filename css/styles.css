@@ -1,0 +1,433 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Jura', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: black;
+    color: white;
+}
+
+.header-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease, opacity 0.5s ease, visibility 0.5s ease;
+    background-image: url('../images/e3d72cffed0fe2c29103dbc0ef0ba5f0.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.header-content.open {
+    max-height: 500px;
+    padding: 70px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.toggle-arrow {
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+    transform: rotate(270deg);
+}
+
+.toggle-arrow span {
+    font-size: 30px;
+    color: white;
+    display: inline-block;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+
+.toggle-arrow:hover span {
+    transform: scale(1.2);
+    color: #ff007a;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+
+.toggle-arrow.active span {
+    transform: rotate(180deg);
+}
+
+.hero-section {
+    position: relative;
+    text-align: center;
+    padding: 145px 20px;
+    background-color: black;
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.ellipse-background {
+    width: 462px;
+    height: 462px;
+    position: absolute;
+    background: radial-gradient(100% 100%, rgba(36, 58, 175, 0.5) 0%, rgba(15, 24, 73, 0.5) 100%);
+    border-radius: 50%;
+    left: 84%;
+    top: 40px;
+    transform: translateX(-50%);
+}
+
+.razd {
+    width: 462px;
+    height: 462px;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    left: 0%;
+    top: 0px;
+}
+
+.yoda-logo {
+    width: 400px;
+    width: 462px;
+    height: 462px;
+    position: absolute;
+    left: 72%;
+    top: 40px;
+}
+
+.logotop {
+    position: relative;
+    top: -85px;
+    right: 80px;
+    width: 100px;
+    height: 100px;
+}
+
+.hero-title {
+    font-family: 'Krona One', sans-serif;
+    font-size: 100px;
+    background: linear-gradient(to right, #ff007a, #8c52ff);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-top: 30px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: scale(0.9);
+}
+
+.modal.show {
+    display: flex;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.modal-content {
+    background-color: rgba(0, 0, 0, 0.774);
+    padding: 30px;
+    border: 1px solid #00eeff;
+    border-radius: 15px;
+    text-align: center;
+    width: 50%;
+    box-shadow: 0 0 20px rgba(0, 238, 255, 0.7);
+    position: relative;
+    animation: glowingBorder 1.5s infinite alternate;
+}
+
+@keyframes glowingBorder {
+    from {
+        box-shadow: 0 0 20px rgba(255, 204, 0, 0.5);
+    }
+
+    to {
+        box-shadow: 0 0 40px rgba(255, 204, 0, 0.8);
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #ffcc00;
+    transition: transform 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #fff;
+    transform: scale(1.2);
+}
+
+#dish-title {
+    font-family: 'Jura', sans-serif;
+    font-size: 36px;
+    color: #ffcc00;
+    margin-bottom: 20px;
+}
+
+#dish-description {
+    font-size: 18px;
+    font-family: 'Jura', sans-serif;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+#dish-recipe {
+    font-size: 18px;
+    color: #ffcc00;
+    font-family: 'Jura', sans-serif;
+}
+
+#dish-image {
+    border-radius: 50%;
+    border: 2px solid #ffcc00;
+    margin-bottom: 20px;
+}
+
+
+.food-item img {
+    padding-bottom: 10.5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.food-item:hover img {
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+
+.description {
+    font-family: 'Jura', sans-serif;
+    font-size: 18px;
+    max-width: 800px;
+    margin: 20px auto;
+    line-height: 1.5;
+}
+
+.catalog-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    margin-top: 30px;
+    background-color: #A559F3;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.catalog-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.catalog-section h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.food-items {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.food-item {
+    width: 300px;
+    text-align: center;
+}
+
+.food-item img {
+    width: 100%;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.food-item:hover img {
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: black;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.menu li {
+    position: absolute;
+}
+
+.btn-main {
+    top: 0;
+    left: -760px;
+}
+
+.btn-benefits {
+    top: 0px;
+    left: -500px;
+}
+
+.btn-about {
+    top: 0px;
+    left: -260px;
+}
+
+.btn-reviews {
+    top: 0px;
+    left: 0px;
+}
+
+.container .btn {
+    position: relative;
+    width: 250px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .btn a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    padding: 10px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    overflow: hidden;
+    color: #fff;
+    font-weight: 400px;
+    z-index: 1;
+    transition: 0.5s;
+    backdrop-filter: blur(15px);
+}
+
+.container .btn:hover a {
+    letter-spacing: 3px;
+}
+
+.container .btn a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+    transform: skewX(45deg) translate(0);
+    transition: 0.5s;
+    filter: blur(0px);
+}
+
+.container .btn:hover a::before {
+    transform: skewX(45deg) translate(200px);
+}
+
+.container .btn::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -5px;
+    width: 30px;
+    height: 10px;
+    background: #f00;
+    border-radius: 10px;
+    transition: 0.3s;
+    transition-delay: 0.3s;
+}
+
+.container .btn:hover::before {
+    bottom: 0;
+    height: 50%;
+    width: 80%;
+    border-radius: 30px;
+}
+
+.container .btn::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -5px;
+    width: 30px;
+    height: 10px;
+    background: #f00;
+    border-radius: 10px;
+    transition: 0.3s;
+    transition-delay: 0.3s;
+}
+
+.container .btn:hover::after {
+    top: 0;
+    height: 50%;
+    width: 80%;
+    border-radius: 30px;
+}
+
+.container .btn:nth-child(1)::before,
+.container .btn:nth-child(1)::after {
+    background: #ff1f71;
+    box-shadow: 0 0 5px #ff1f71, 0 0 15px #ff1f71, 0 0 30px #ff1f71, 0 0 60px #ff1f71;
+    background: #2db2ff;
+    box-shadow: 0 0 5px #2db2ff, 0 0 15px #2db2ff, 0 0 30px #2db2ff, 0 0 60px #2db2ff;
+}
+
+.container .btn:nth-child(2)::before,
+.container .btn:nth-child(2)::after {
+    background: #ff531f;
+    box-shadow: 0 0 5px #e08215, 0 0 15px #ee7a0f, 0 0 30px #f5a40d, 0 0 60px #f3bc09c9;
+}
+
+.container .btn:nth-child(3)::before,
+.container .btn:nth-child(3)::after {
+    background: #1eff45;
+    box-shadow: 0 0 5px #1eff45, 0 0 15px #1eff45, 0 0 30px #1eff45, 0 0 60px #1eff45;
+}
